@@ -1,0 +1,132 @@
+2-
+Uma classe é um blueprint usado para criar objetos. Um objeto é uma instância de uma classe - é uma "coisa" concreta que você criou usando uma classe específica. Portanto, 'objeto' e 'instância' são a mesma coisa, mas a palavra 'instância' indica a relação de um objeto com sua classe.
+
+Isso é fácil de entender se você olhar para um exemplo. Por exemplo, suponha que você tenha uma classe House. Sua própria casa é um objeto e é uma instância da classe House. A casa da sua irmã é outro objeto (outra instância da classe House).
+
+// A classe House descreve o que uma casa é
+class House {
+    // ...
+}
+
+// Você pode usar a classe House para criar objetos (instâncias da classe House)
+House myHouse = new House();
+House sistersHouse = new House();
+A classe House descreve o conceito do que é uma casa, e há casas concretas específicas que são objetos e instâncias da classe House.
+
+
+3-
+Um construtor em Java é um método especial usado para inicializar objetos. O construtor é chamado quando um objeto de uma classe é criado. Pode ser usado para definir valores iniciais para atributos do objeto.
+Existem três tipos de construtores: Padrão, Construtor sem argumento e Parametrizado.
+Ex:
+public class Hello {
+   String name;
+   //Constructor
+   Hello(){
+      this.name = "BeginnersBook.com";
+   }
+   public static void main(String[] args) {
+      Hello obj = new Hello();
+      System.out.println(obj.name);
+   }
+}
+
+
+4-
+public class Teste {        
+
+
+        public static double fatorialInterativo(double numero){
+            double acumulador = 1;
+            for(int contador = 1; contador <= numero; contador++){
+                acumulador = acumulador * contador;
+
+            }
+            return acumulador;
+        }
+
+        public static double fatorialRecursivo(double numero){
+
+            double fat = 0.0;
+
+            if (numero <= 1){
+                return numero;
+            }else{
+
+                return fat= numero * fatorialRecursivo(numero - 1);
+            }
+
+    }
+
+            public static void main(String[] args) { 
+
+            System.out.println(" \n\n fatorial interativo .....: "+  fatorialInterativo(5.0) );
+            System.out.println(" \n\n fatorial recursivo  .....: "+  fatorialRecursivo(5.0) );
+
+            }
+        }
+
+
+5-
+Em orientação a objetos Atributo é uma propriedade ou também conhecido como campo ou váriavel que são pertencentes a uma classe, que são usadas para dar caracteriticas a uma classe, como no exemplo abaixo onde temos a classe Carro com três atributos cor, marca e nome que são suas caracteristicas nesse exemplo.
+
+public class Carro {
+
+    //Aqui são os atributos da classe Carro
+    private String cor;
+    private String marca;
+    private String nome;
+
+    public String getCor() {
+        return cor;
+    }
+
+    public void setCor(String cor) {
+        this.cor = cor;
+    }
+
+    public String getMarca() {
+        return marca;
+    }
+
+    public void setMarca(String marca) {
+        this.marca = marca;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+}
+Variável de Instância como o nome já diz é uma instância sendo ela criada a partir de uma Classe, seguindo o mesmo exemplo da classe Carro, poderiamos ter várias instâncias dessa classe onde em cada uma delas teriamos seus atributos definidos de forma diferentes como no exemplo a seguir:
+
+public class MeuCarro {
+
+    public static void main(String[] args) {
+
+        Carro carro1 = new Carro();
+        carro1.setCor("Azul");
+        carro1.setMarca("Mitsubishi");
+        carro1.setNome("Mitsubishi L200 Triton");
+
+        Carro carro2 = new Carro();
+        carro2.setCor("Preto");
+        carro2.setMarca("Ford");
+        carro2.setNome("Ford Ranger");
+
+        System.out.println("Carro 1:");
+        System.out.println("Cor: " + carro1.getCor());
+        System.out.println("Marca: " + carro1.getMarca());
+        System.out.println("Nome: " + carro1.getNome());
+
+        System.out.println("\nCarro 2:");
+        System.out.println("Cor: " + carro2.getCor());
+        System.out.println("Marca: " + carro2.getMarca());
+        System.out.println("Nome: " + carro2.getNome());
+
+    }
+
+}
